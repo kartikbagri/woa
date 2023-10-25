@@ -30,7 +30,7 @@ def final_result(model_name):
                     "ub": problem.ub,
                     "minmax": "min",
                     "log_to": "file",
-                    "log_file": "history.log",
+                    "log_file": "history-hiwoa.log",
                 }
                 for pop_size in [
                     10,
@@ -77,7 +77,7 @@ def final_result(model_name):
         df.to_csv(f"{directory_path}/{key}.csv", index=True)
 
 
-with open("./progress.txt", "w") as f:
+with open("./progress-hiwoa.txt", "w") as f:
     sys.stdout = f
     final_result(OriginalWOA)
     sys.stdout = original_stdout

@@ -307,7 +307,7 @@ def final_result(model_name):
                     "ub": problem.ub,
                     "minmax": "min",
                     "log_to": "file",
-                    "log_file": "history.log",
+                    "log_file": "history-msdwoa.log",
                     "dim": dimension,
                 }
                 for pop_size in [
@@ -355,7 +355,7 @@ def final_result(model_name):
         df.to_csv(f"{directory_path}/{key}.csv", index=True)
 
 
-with open("./progress.txt", "w") as f:
+with open("./progress-msdwoa.txt", "w") as f:
     sys.stdout = f
     final_result(mSDWOA)
     sys.stdout = original_stdout
